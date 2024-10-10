@@ -104,6 +104,7 @@ The app will be running at `http://localhost:3000`.
 - **Axios/Fetch API**: For making API requests.
 - **ESLint**: Tool for linting JavaScript code.
 - **PostCSS**: For transforming CSS.
+- - **Lucide React**: For icons.
 
 ## **Features Breakdown**
 
