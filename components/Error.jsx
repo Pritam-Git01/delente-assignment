@@ -7,7 +7,7 @@ export default function ErrorUI({ message, handleReload }) {
           <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-red-100">
             <AlertCircle className="w-8 h-8 text-red-500" />
           </div>
-          <h2 className="mb-4 text-2xl font-bold text-center text-gray-800">Oops! Something went wrong</h2>
+          <h2 className="mb-4 text-2xl font-bold text-center text-gray-800">Oops! Something went wrong.</h2>
           <p className="mb-8 text-center text-gray-600">{message}</p>
           <button
             onClick={handleReload}
