@@ -1,5 +1,6 @@
 "use client"
 
+import { Link } from 'next/link';
 import { useState, useEffect } from 'react'
 
 export default function ErrorComponent() {
@@ -20,7 +21,7 @@ export default function ErrorComponent() {
           <div className="text-center">
             <h1 className="text-9xl font-bold text-blue-500">404</h1>
             <p className="text-2xl font-semibold text-gray-700 mt-4">Oops! Page not found</p>
-            <p className="text-gray-500 mt-2">The page you're looking for doesn't exist or has been moved.</p>
+            <p className="text-gray-500 mt-2">The page you are looking for does not exist or has been moved.</p>
           </div>
           <div className="mt-8">
             <div className="relative">
@@ -38,12 +39,12 @@ export default function ErrorComponent() {
             </div>
           </div>
           <div className="mt-12 flex justify-center">
-            <a
+            <Link
               href="/"
               className="px-6 py-3 bg-blue-500 text-white rounded-full font-semibold text-sm transition duration-300 ease-in-out hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
             >
               Go back to homepage
-            </a>
+            </Link>
           </div>
         </div>
         <div className="bg-blue-50 p-4">
