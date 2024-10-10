@@ -1,10 +1,11 @@
 // pages/products/[id].js
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback} from 'react';
 import LoaderUI from '@/components/Loader';
 import ErrorUI from '@/components/Error';
 import axios from 'axios';
+
 
 // Dynamically import ProductDetails component with a loading indicator
 const ProductDetails = dynamic(() => import('../../../components/ProductDetails'), {
@@ -20,7 +21,8 @@ const ProductPage = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchProduct = async () => {
+
+  const fetchProduct = useCallback(async () => {
     try {
       const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
       // console.log(response.data)
@@ -33,7 +35,7 @@ const ProductPage = () => {
       setProduct({});
       setLoading(false);
     }
-  };
+  }, [id])
 
   useEffect(() => {
    
@@ -41,7 +43,7 @@ const ProductPage = () => {
         fetchProduct();
       }
 
-  }, [id]);
+  }, [id, fetchProduct]);
 
   if (loading) {
     return <LoaderUI />;
