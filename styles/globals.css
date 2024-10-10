@@ -4,20 +4,50 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #01021A;
+  --primary: #3490dc;
+  --secondary: #ffed4a;
+  --accent: #f6993f;
+  --card-bg: #ffffff; /* Light mode background */
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body.light {
+  --background: #ffffff;
+  --foreground: #01021A;
+  --primary: #3490dc;
+  --secondary: #ffed4a;
+  --accent: #f6993f;
+  --card-bg: #ffffff; /* Light mode background */
+
 }
+
+
+body.dark {
+  --background: #01021A;
+  --foreground: #ffffff;
+  --primary: #64b5f6;
+  --secondary: #ffd600;
+  --accent: #ff9100;
+  --card-bg: #3a3a3a80;  /* Dark mode background */
+}
+
+
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+button:disabled {
+  background-color: gray;
+}
+
+
+
+button:disabled:hover {
+  background-color: gray;
 }
 
 @layer utilities {
